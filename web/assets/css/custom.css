@@ -1,0 +1,16 @@
+body {
+    background-image: url("../../assets/images/back.jpg");
+
+}
+.bloc_search {
+    margin-top: 15%;
+    margin-left: 25%;
+    margin-right: 20%;
+}
+.title {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 90px;
+    font-weight: bold;
+    color: #269abc;
+}
