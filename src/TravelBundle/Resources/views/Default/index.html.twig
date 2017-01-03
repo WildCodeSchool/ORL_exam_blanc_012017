@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block body %}
+    <div class="well">
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+       <div class="text-center">
+
+           <input class="btn btn-lg btn-primary " type="submit" value="Search"/>
+       </div>
+        {{ form_end(form) }}
+    </div>
+    <table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>Hotel</th>
+            <th>Stars</th>
+            <th>City</th>
+            <th>Free Rooms</th>
+        </tr>
+    </thead>
+        <tbody>
+        {% for key,result in results %}
+            <tr>
+                <td>{{ result.hotel.name }}</td>
+                <td>
+                {% for i in 1 .. result.hotel.stars %}
+                    <span class="glyphicon glyphicon-star"></span>
+                {% endfor %}
+                </td>
+                <td>{{ result.hotel.city }}</td>
+                <td>{{ result.freeRoom }}</td>
+            </tr>
+
+        {% else %}
+            No hotel
+        {% endfor %}
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+{% endblock %}
