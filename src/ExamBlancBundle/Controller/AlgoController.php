@@ -37,7 +37,7 @@ class AlgoController extends Controller
     // Exercice 2
     public function panier($tab)
     {
-
-
+        $voila = "voila, voila..."
+        return $voila;
     }
 }
