@@ -4,13 +4,15 @@
     {{ form_start(form) }}
     {{ form_label(form.nb, "Nombre de chambres à réserver") }}
     {{ form_widget(form.nb) }}
+    {{ form_label(form.etoile, "Nombre d'étoile") }}
+    {{ form_widget(form.etoile) }}
 
     <input class="btn btn-success" type="submit" value="Créer" />
     {{ form_end(form) }}
 
 {% if hotels !=0 %}
     {% for hotel in hotels %}
-        <a href="{{ hotel.website }}">{{ hotel.name }}</a><br/>
+        <a href="{{ hotel.website }}">{{ hotel.name }}</a>  {{ hotel.stars }}étoiles<br/>
     {% endfor %}
 {% endif %}
 {%  endblock %}

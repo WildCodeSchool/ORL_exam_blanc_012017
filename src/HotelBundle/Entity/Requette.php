@@ -28,6 +28,13 @@ class Requette
      */
     private $nb;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="etoile", type="integer")
+     */
+    private $etoile;
+
 
     /**
      * Get id
@@ -62,4 +69,21 @@ class Requette
     {
         return $this->nb;
     }
+
+    /**
+     * @return int
+     */
+    public function getEtoile()
+    {
+        return $this->etoile;
+    }
+
+    /**
+     * @param int $etoile
+     */
+    public function setEtoile($etoile)
+    {
+        $this->etoile = $etoile;
+    }
+
 }
