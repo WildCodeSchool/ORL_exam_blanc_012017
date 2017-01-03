@@ -1,0 +1,71 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+{{ render(controller('TravelBundle:Hotel:new')) }}
+
+
+
+
+{% endblock %}
+
+
+
+{#  /////////////////////////////////////////////////////////////////////////
+					Commencement de l'éxercice en PHP
+	/////////////////////////////////////////////////////////////////////////
+
+<?php
+try
+{
+	$bdd = new PDO('mysql:host=localhost;dbname=exam;charset=utf8', 'root', 'ran666x');
+}
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
+?>
+
+		<form method="POST" action="">
+			<table>
+					<tr>
+						<td><label>Nombre de chambres à résevrer :</label></td>
+						<td><input type="number" name="chambre" value="" placeholder="2..." /></td>
+					</tr>
+
+					<tr>
+						<td><input type="submit" name="envoyer" value="envoyer"</td>
+					</tr>
+
+			</table>
+		</form>
+
+
+
+<?php
+
+$chambre = $_POST['chambre'];
+
+if (isset($_POST['envoyer'])  && $_POST['chambre'] <= 3){
+			
+			if( !empty($_POST['chambre'])){
+		
+				$sql = "SELECT book FROM room WHERE book != 1 ";
+				$resultat = $bdd->query($sql);
+
+
+while ($donnees = $resultat->fetch())
+
+{	
+	echo "<span style='color: black; font-size: 15px'> Article numéro : " . $donnees['book'] . "<br />"; 
+}
+											}
+														}
+
+if (isset($_POST['envoyer'])  && $_POST['chambre'] > 3){
+	echo '<script type="text/javascript">alert("la capacité ne peut dépasser 3");</script>'; 
+														}
+$resultat->closeCursor();		
+		
+?>
+
+#}

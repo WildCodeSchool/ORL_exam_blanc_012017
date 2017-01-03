@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1 style="text-align:center;">RESEVATION</h1>
+<center>
+<div class="container" style="width: 50%;>
+    {{ form_start(form) }}
+    <form action="{{ path('hotel_new') }}" method="POST" name="formmail">
+
+                    {{form_label(form.chambre, 'chambre à réserver')}}<br />
+                    {{form_widget(form.chambre, {'attr':{'class':'form-control'}}) }}
+                    {{form_errors(form.chambre)}}
+
+
+                <div class="form-group"><input type="submit" value="Rechercher" /></div>
+    {{ form_end(form) }}
+
+   
+
+    <ul>
+        <li>
+            <a href="{{ path('hotel_index') }}">Revenir à la liste</a>
+        </li>
+    </ul>
+
+ </div>
+ </center>
+{% endblock %}
