@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Hotels list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>hotel</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for room  in hotels %}
+            <tr>
+                <td><a href="{{ path('room_show', { 'id': room.id }) }}">{{ room.hotel.name }}</a></td>
+                <td>{{ room.capacity }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('index') }}">Back to the list</a>
+{% endblock %}
