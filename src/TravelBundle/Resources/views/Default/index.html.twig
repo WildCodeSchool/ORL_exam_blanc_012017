@@ -1,0 +1,25 @@
+{% extends ('base.html.twig') %}
+
+{% block body %}
+    <p class="text-center" style="font-size: 3em">Find your room</p>
+    <div class="table-title">
+    <div class="table-title">
+    </div>
+    <table class="table-fill">
+        <thead>
+        <tr>
+            <th class="text-left">Number of Room</th>
+            <th class="text-left">Availability</th>
+        </tr>
+        </thead>
+        <tbody class="table-hover">
+        {% for room in listRoom %}
+        <tr>
+            <td class="text-left">{{ room.roomNumber }}</td>
+            <td class="text-left">{{ room.book }}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+{% endblock %}
