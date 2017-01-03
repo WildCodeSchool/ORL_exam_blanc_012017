@@ -1,1 +1,17 @@
-Hello World!
+{% extends '@ExamBlanc/default/layout.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_label(form.nb, "Nombre de chambres à réserver") }}
+    {{ form_widget(form.nb) }}
+
+    <input class="btn btn-success" type="submit" value="Créer" />
+    {{ form_end(form) }}
+
+{% if hotels !=0 %}
+    {% for hotel in hotels %}
+        <a href="{{ hotel.website }}">{{ hotel.name }}</a><br/>
+    {% endfor %}
+{% endif %}
+{%  endblock %}
+

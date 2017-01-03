@@ -21,12 +21,4 @@ class DefaultController extends Controller
         return $this->render('@ExamBlanc/SF2/index.html.twig');
     }
 
-    /**
-     *
-     * @Route("/hotel", name="hotel")
-     */
-    public function hotelAction()
-    {
-        return $this->render('@ExamBlanc/SF2/index.html.twig');
-    }
 }

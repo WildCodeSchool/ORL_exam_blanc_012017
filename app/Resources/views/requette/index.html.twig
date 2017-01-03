@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Requettes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nb</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for requette in requettes %}
+            <tr>
+                <td><a href="{{ path('requette_show', { 'id': requette.id }) }}">{{ requette.id }}</a></td>
+                <td>{{ requette.nb }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('requette_show', { 'id': requette.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('requette_edit', { 'id': requette.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('requette_new') }}">Create a new requette</a>
+        </li>
+    </ul>
+{% endblock %}

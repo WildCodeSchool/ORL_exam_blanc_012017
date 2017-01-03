@@ -1,8 +1,8 @@
 hotel:
     resource: "@HotelBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /hotel
 
 exam_final:
     resource: "@ExamBlancBundle/Resources/config/routing.yml"
-    prefix:   /hotel
+    prefix:   /
