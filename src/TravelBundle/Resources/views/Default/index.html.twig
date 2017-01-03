@@ -1,10 +1,11 @@
 {% extends ('base.html.twig') %}
 
 {% block body %}
-    <p class="text-center" style="font-size: 3em">Find your room</p>
-    <div class="table-title">
-    <div class="table-title">
-    </div>
+<div class="container">
+    <p class="text-center" style="font-size: 2em">Find if your room is available <br />
+    If your room has a "1" status for availibity, it means IT IS NOT AVAILABLE.
+        A white space means IT'S AVAILABLE</p>
+    
     <table class="table-fill">
         <thead>
         <tr>
@@ -21,5 +22,5 @@
         </tbody>
         {% endfor %}
     </table>
-
+</div>
 {% endblock %}
