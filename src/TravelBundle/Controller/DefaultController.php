@@ -32,7 +32,7 @@ class DefaultController extends Controller
 
 
 
-        return $this->render('TravelBundle:Default:.html.twig', array(
+        return $this->render('TravelBundle:Default:index.html.twig', array(
             'hotels' => $hotels,
         ));
 

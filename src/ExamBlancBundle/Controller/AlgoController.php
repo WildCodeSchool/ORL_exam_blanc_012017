@@ -28,24 +28,23 @@ class AlgoController extends Controller
     }
 
     // Exercice 2
-    public function panier($tab)
+    public function panier($tab,$qty, $price_ht, $code_tva)
     {
-        foreach ($tab){
+        foreach ($tab as $keys => $values){
 
         if($tab[$qty]>=3){
            $HT = 0.05*$price_ht;
-           $TVA1= $tab[$code_tva]*$tab[$HT]
+           $TVA1= $tab[$code_tva]*$HT;
         }
         elseif($tab[$qty]>=10){
             $HT = 0.10*$price_ht;
-            $TVA2= $tab[$code_tva]*$tab[$HT]
+            $TVA2= $tab[$code_tva]*$HT;
         }
-        foreach ($tab){
-            return $Results = array( "HTtotal"=> $tab[$qty]*[$HT],
-                                "TVAtotal1"=> $TVA1,
-                                "TVATotal2"=> $TVA2,
-                                "TTCTotal" => $tab[$qty]*[$HT]*$qty);
-                )
+        foreach ($tab as   $values ){
+            return $Results = array( "HTtotal"=> $tab[$qty]*$HT,
+                                     "TVAtotal1"=> $TVA1,
+                                     "TVATotal2"=> $TVA2,
+                                     "TTCTotal" => $tab[$qty]*$HT*$qty);
 
 
 
