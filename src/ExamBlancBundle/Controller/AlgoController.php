@@ -13,19 +13,30 @@ class AlgoController extends Controller
     // Exercice 1
     public function number_of_char($str)
     {
-		if (preg_match('/[a-x]/',$str, $char)){
-		     $result = count_chars(implode($char));
+
+			$str = strtolower($str);
+			str_replace(' ', '', $str);
+		     $result = count_chars($str, 1);
 		     return $result;
-          }
-		else {
-			return 'nothing';
-}
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
 
     // Exercice 2
     public function panier($tab)
     {
-	    $total_ht = $tab[1] * $tab[3];
+	     $total_ht = $tab[1] * $tab[3];
 
     	     $remise1 = $total_ht * 0.05;
     	     $remise2 = $total_ht * 0.1;
