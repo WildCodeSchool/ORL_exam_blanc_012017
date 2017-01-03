@@ -121,5 +121,14 @@ class Room
 
 
 
-}
 
+    /**
+     * Get book
+     *
+     * @return boolean
+     */
+    public function getBook()
+    {
+        return $this->book;
+    }
+}
