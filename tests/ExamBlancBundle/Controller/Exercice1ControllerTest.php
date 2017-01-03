@@ -5,6 +5,7 @@ namespace ExamBlancBundle\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use ExamBlancBundle\Controller\AlgoController;
 
+
 class Exercice1ControllerTest extends WebTestCase
 {
     private $controller;
@@ -22,10 +23,12 @@ class Exercice1ControllerTest extends WebTestCase
     {
         $this->assertEquals($this->controller->number_of_char("a"), ["a" => 1]);
     }
+
     public function test2 ()
     {
         $this->assertEquals($this->controller->number_of_char("A"), ["a" => 1]);
     }
+
     public function test3 ()
     {
         $this->assertEquals($this->controller->number_of_char("ab"), ["a" => 1, "b" => 1]);
@@ -54,4 +57,5 @@ class Exercice1ControllerTest extends WebTestCase
     {
         $this->assertEquals($this->controller->number_of_char("Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés."), ["e" => 14, "u" => 7, "t" => 7, "s" => 7, "a" => 6, "n" => 6, "i" => 5, "o" => 4, "p" => 4, "d" => 4, "r" => 3, "g" => 2, "b" => 2, "c" => 2, "m" => 2, "x" => 1]);
     }
+
 }
