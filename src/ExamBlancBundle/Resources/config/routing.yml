@@ -9,3 +9,7 @@ exam_blanc_algo:
 exam_blanc_sf2:
     path: sf2
     defaults: { _controller: ExamBlancBundle:Default:sf2 }
+
+exam_blanc_test:
+    path: /test
+    defaults: { _controller: ExamBlancBundle:Algo:test }
