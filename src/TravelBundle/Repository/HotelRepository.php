@@ -10,31 +10,21 @@ namespace TravelBundle\Repository;
  */
 class HotelRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findByHotelWithRoom($nbRoom, $city = '', $star = 1)
+    public function findByHotelWithRoom($nbRoom, $city = '', $stars = 1)
     {
         return $this->createQueryBuilder('h')
             ->select('h, COUNT(r.hotel) as nbroom')
-            ->join('TravelBundle:Room', 'r')
+            ->join('h.rooms', 'r')
             ->groupBy('r.hotel, h.id')
                 ->having('nbroom>=:nbroom')
                     ->setParameter('nbroom', $nbRoom)
-            ->where('r.book >= :book')
+            ->where('r.book = :book')
                 ->setParameter('book', 0)
             ->andWhere('h.stars >= :stars')
-                ->setParameter('stars', $star)
-             ->andWhere('h.city=:city')
+                ->setParameter('stars', $stars)
+            ->andWhere('h.city=:city')
                 ->setParameter('city', $city)
-        ->getQuery()->getResult();
+            ->orderBy('nbroom', 'DESC')
+            ->getQuery()->getResult();
     }
-
-    public function findByStarsAndCity($city, $star = 1)
-    {
-        return $this->createQueryBuilder('h')
-            ->where('h.stars >= :stars')
-                ->setParameter('stars', $star)
-             ->andWhere('h.city=:city')
-                ->setParameter('city', $city)
-        ->getQuery()->getResult();
-    }
-
 }

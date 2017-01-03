@@ -21,16 +21,16 @@
         </tr>
     </thead>
         <tbody>
-        {% for key,result in results %}
+        {% for key,result in hotels %}
             <tr>
-                <td>{{ result.hotel.name }}</td>
+                <td>{{ result.0.name }}</td>
                 <td>
-                {% for i in 1 .. result.hotel.stars %}
+                {% for i in 1 .. result.0.stars %}
                     <span class="glyphicon glyphicon-star"></span>
                 {% endfor %}
                 </td>
-                <td>{{ result.hotel.city }}</td>
-                <td>{{ result.freeRoom }}</td>
+                <td>{{ result.0.city }}</td>
+                <td>{{ result.nbroom }}</td>
             </tr>
 
         {% else %}
