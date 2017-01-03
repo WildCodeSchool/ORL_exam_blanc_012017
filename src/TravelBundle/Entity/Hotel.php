@@ -284,4 +284,3 @@ class Hotel
         return $this->id;
     }
 }
-

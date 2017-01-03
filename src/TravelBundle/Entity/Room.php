@@ -139,4 +139,3 @@ class Room
         return $this->hotel;
     }
 }
-

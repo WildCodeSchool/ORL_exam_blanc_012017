@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.capacity) }}
+    <input type="submit" value="go !" class="btn btn-info center-block">
+    {{ form_end(form) }}
+{% endblock %}
