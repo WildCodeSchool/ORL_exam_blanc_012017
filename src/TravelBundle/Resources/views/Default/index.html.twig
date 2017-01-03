@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="text-center">Bienvenue sur votre interface de réservation en ligne</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <a href="{{ path('room_index') }}">Cliquer ici pour voir les chambres disponibles</a>
+            </div>
+            <div class="col-xs-6 text-center">
+                <a href="{{ path('hotel_index') }}">Cliquer ici pour voir la liste des hôtels</a>
+            </div>
+        </div>
+{% endblock %}

@@ -1,3 +1,20 @@
+travel:
+    resource: "@TravelBundle/Controller/"
+    type:     annotation
+    prefix:   /travel
+
+room:
+    resource: "@TravelBundle/Controller/RoomController.php"
+    type:     annotation
+    prefix:   /room
+
+hotel:
+    resource: "@TravelBundle/Controller/HotelController.php"
+    type:     annotation
+    prefix:   /hotel
+
 exam_final:
     resource: "@ExamBlancBundle/Resources/config/routing.yml"
     prefix:   /
+
+
