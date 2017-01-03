@@ -64,14 +64,16 @@ class AlgoController extends Controller
                 $articleDiscount = 0;
                 $articleHT = $item["price_ht"]*$item["qty"];
             }
-            var_dump($totalTVA5);
+            //var_dump($totalTVA5);
             if($item['code_tva'] == 1){
+                //var_dump($articleHT*($tva[$item['code_tva']]));
                 $articleTVA5 = $articleHT*($tva[$item['code_tva']]);
-                var_dump($articleTVA5);
+                //var_dump($articleTVA5);
                 $articleTTC = $articleHT+$articleTVA5;
             }elseif($item['code_tva'] == 2){
+
                 $articleTVA20 = $articleHT*($tva[$item['code_tva']]);
-                var_dump($articleTVA20);
+                //var_dump($articleTVA20);
                 $articleTTC = $articleHT+$articleTVA20;
             }
 
@@ -83,5 +85,6 @@ class AlgoController extends Controller
         }
         $facture=['total_ht'=>round($totalHT,2),'total_discount'=>round($totalDiscount,2),'total_tva5'=>round($totalTVA5,2),'total_tva20'=>round($totalTVA20,2),'total_ttc'=>round($totalTTC,2)];
         var_dump($facture);
+        return $facture;
     }
 }
