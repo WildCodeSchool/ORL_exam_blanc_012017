@@ -28,5 +28,5 @@ class AlgoController extends Controller
         else(code_tva = 2){
             return $ht * 1.20;
         }
-        
+
     }
